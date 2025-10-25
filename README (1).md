@@ -1,4 +1,4 @@
-# Adword-Data-Analysis
+#TrafficTread - Visualizer
 
 [![Python Version](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/)
 [![MySQL](https://img.shields.io/badge/Database-MySQL-informational)](https://www.mysql.com/)
