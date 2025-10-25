@@ -3,7 +3,6 @@
 [![Python Version](https://img.shields.io/badge/Python-3.9-blue)](https://www.python.org/)
 [![MySQL](https://img.shields.io/badge/Database-MySQL-informational)](https://www.mysql.com/)
 [![Power BI](https://img.shields.io/badge/Visualization-Power_BI-yellow)](https://www.microsoft.com/en-us/power-platform/products/power-bi)
-[![License](https://img.shields.io/badge/License-MIT-blue)](https://github.com/AdityakumarDA/Adword-Data-Analysis/tree/main?tab=MIT-1-ov-file)
 
 A complete, real-world AdWords Data Analysis pipeline from raw Excel to fully interactive dashboards using **Excel**, **Python (pandas)**, **MySQL**, and **Power BI**.
 
@@ -18,15 +17,11 @@ This project mimics an enterprise-level ETL (Extract, Transform, Load) and BI (B
 - [📊 Tools & Technologies](#-tools--technologies)
 - [🔁 End-to-End Workflow](#-end-to-end-workflow)
 - [🧹 Excel + Python Processing](#-excel--python-processing)
-- [🗂 Lookup & Fact Tables Description](#-lookup--fact-tables-description)
 - [🗃 SQL Schema & Relationships](#-sql-schema--relationships)
 - [🧠 Relationship Diagram (EER)](#-relationship-diagram-eer)
 - [📈 Power BI Dashboard](#-power-bi-dashboard)
 - [🧩 Power BI Data Model View](#-power-bi-data-model-view)
 - [⚙ How to Use This Project](#-how-to-use-this-project)
-- [📂 Repository Structure](#-repository-structure)
-- [📝 License](#-license)
-- [📬 About Me](#-about-me)
 
 ---
 
@@ -77,8 +72,6 @@ Each stage builds on the last. The result is a smooth, production-style pipeline
 - Contains columns like `title`, `keyword`, `positions`, `traffic`, `CPC`, etc.
 - This is the simulated export from Google AdWords.
 
-![Raw Excel Data](Images/raw_excel_sample.png)
-
 ### ✅ Step 2: Assigning Keyword IDs with Python
 Using `pandas`, we:
 - Loaded Excel using `pd.read_excel()`.
@@ -123,9 +116,6 @@ This table contains a deduplicated list of all unique keywords with their assign
 ✅ Created using Excel's `VLOOKUP` function to map keywords with their IDs.
 
 
-![Excel Lookup Tables](Images/excel_lookup_table_1.png)
-
-
 ---
 
 #### 🔹 `search_volume.csv`
@@ -139,7 +129,6 @@ This table includes the total monthly search volume per keyword.
 ✅ Created using `SUMIF` to calculate the total search volume for each keyword ID.
 
 
-![Excel Lookup Tables](Images/excel_lookup_table_3.png)
 
 
 ---
@@ -156,9 +145,6 @@ This table stores the average keyword difficulty score along with a difficulty l
 ✅ Created using:
 - `AVERAGEIF` to compute average difficulty per `keyword_ID`
 - `IF` to categorize as `"Hard"` or `"Moderate"`
-
-![Excel Lookup Tables](Images/excel_lookup_table_2.png)
-
 
 ---
 
@@ -184,9 +170,6 @@ This table holds all enriched AdWords metrics after processing.
 | `Keyword_difficulty`    | Foreign key from `keyword_difficulty.csv`                  |
 
 ✅ This is the central **fact table**, joined with all three lookup tables to support relational queries and visualizations.
-
-
-![Excel Lookup Tables](Images/main_table.png)
 
 
 ---
@@ -225,8 +208,6 @@ CREATE TABLE website_traffic_data (
 
 ### 📘 Schema Screenshot
 
-![Schema Screenshot](Images/mysql_schema_editor.png)
-
 
 ### 🔑 Keys & Normalization
 
@@ -247,7 +228,6 @@ These keys ensure consistent data joins between tables.
 
 ## 🧠 Relationship Diagram (EER)
 
-![EER Diagram](Images/EER_Diagram.png)
 
 These diagrams visualize the 1-to-many relationships between:
 - Keywords → Traffic Data
@@ -268,7 +248,6 @@ Connected Power BI to MySQL database and created an interactive dashboard.
 - **Pie/Donut**: Traffic by Difficulty, by Month
 - **Slicers**: Year, Quarter, Keyword filter
 
-![Power BI Dashboard](Images/power_bi_dashboard.png)
 
 ### 🔢 DAX Measures
 ```DAX
@@ -305,7 +284,6 @@ To enable seamless slicing and aggregation, a clean star schema was created in P
 
 ✅ This model ensures accurate filtering and joins.
 
-![Power BI Data Model](Images/powerbi_data_model.png)
 
 
 ---
@@ -314,8 +292,7 @@ To enable seamless slicing and aggregation, a clean star schema was created in P
 
 ### 🔹 1. Clone the Repo
 ```bash
-git clone https://github.com/AdityakumarDA/Adword-Data-Analysis.git
-```
+git clone https://github.com/subhampujari/TrafficTrend Visualizer.git
 
 ### 🔹 2. Open Excel Files
 - View and understand `Raw_data.xlsx`, CSVs
@@ -326,51 +303,11 @@ git clone https://github.com/AdityakumarDA/Adword-Data-Analysis.git
 - Use provided SQL schema to create and relate tables
 
 ### 🔹 4. Open Power BI Dashboard
-- Use `Traffic Project dashboard.pbix` to view interactive report
+- Use `TrafficTrend Visualizer.pbix` to view interactive report
 - Or connect manually via: `Home → Get Data → MySQL`
 
 ---
-
-## 📂 Repository Structure
-
 ```
-📦 Adword-Data-Analysis
- ┣ 📄 Raw_data.xlsx
- ┣ 📄 website_traffic_data.csv
- ┣ 📄 keyword.csv
- ┣ 📄 keyword_difficulty.csv
- ┣ 📄 search_volume.csv
- ┣ 📄 Traffic Data SQL script.sql
- ┣ 📄 Traffic Project dashboard.pbix
- ┣ 📁 images
- ┃ ┣ 📷 raw_excel_sample.png
- ┃ ┣ 📷 excel_lookup_table_1.png
- ┃ ┣ 📷 excel_lookup_tables_2png
- ┃ ┣ 📷 excel_lookup_table_3.png
- ┃ ┣ 📷 main_table.png
- ┃ ┣ 📷 mysql_schema_editor.png
- ┃ ┣ 📷 EER_Diagram.png
- ┃ ┣ 📷 power_bi_dashboard.png
- ┃ ┗ 📷 powerbi_data_model.png
- ┣ 📄 LICENSE
- ┗ 📄 README.md
-```
-
----
-
-## 📝 License
-
-This project is licensed under the **MIT License** — you are free to use, modify, and share with attribution.
-
----
-
-## 📬 About Me
-
-I'm **Aditya Rajput**, a data analyst passionate about storytelling with data, unsupervised learning, and real-world analytics.
-
-- [LinkedIn](https://www.linkedin.com/in/adityakumarda/)  
-- [GitHub](https://github.com/AdityakumarDA)  
-- [Tableau Public](https://public.tableau.com/app/profile/adityakumarda)
 
 If you liked this project, please ⭐ the repo!
 
