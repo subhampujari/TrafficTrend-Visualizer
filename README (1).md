@@ -4,7 +4,7 @@
 [![MySQL](https://img.shields.io/badge/Database-MySQL-informational)](https://www.mysql.com/)
 [![Power BI](https://img.shields.io/badge/Visualization-Power_BI-yellow)](https://www.microsoft.com/en-us/power-platform/products/power-bi)
 
-A complete, real-world AdWords Data Analysis pipeline from raw Excel to fully interactive dashboards using **Excel**, **Python (pandas)**, **MySQL**, and **Power BI**.
+A complete, real-world TrafficTread - Visualizer Data Analysis pipeline from raw Excel to fully interactive dashboards using **Excel**, **Python (pandas)**, **MySQL**, and **Power BI**.
 
 This project mimics an enterprise-level ETL (Extract, Transform, Load) and BI (Business Intelligence) solution, showcasing data cleaning, relational modeling, and dashboarding — ideal for both recruiters and students studying data analytics, BI, or SQL-based solutions.
 
@@ -27,7 +27,7 @@ This project mimics an enterprise-level ETL (Extract, Transform, Load) and BI (B
 
 ## 🎯 Project Objective
 
-This project analyzes Google AdWords traffic data with the goal of uncovering performance trends, keyword effectiveness, and cost dynamics. It simulates a **real-life advertising analytics pipeline**, commonly used in marketing and digital performance teams.
+This project analyzes GoogleTrafficTread - Visualizer data with the goal of uncovering performance trends, keyword effectiveness, and cost dynamics. It simulates a **real-life advertising analytics pipeline**, commonly used in marketing and digital performance teams.
 
 ---
 
